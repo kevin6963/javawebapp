@@ -1,143 +1,152 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head th:include="included/head"></head>
-<body>
 
+<html>
+    <head>
+        <title>Kevin Webpage</title>
 
-<section class="navbar navbar-fixed-top custom-navbar" th:include="included/navbar" data-ride="carousel"></section>
+        <style>
 
-<div id="homeCarousel" class="carousel slide carousel-home" data-ride="carousel">
+            body{
+                font-family:'Arial',sans-serif;
+                background-color:gray;
+                margin:0;
+                padding:0;
+            }
 
-    <ol class="carousel-indicators">
-        <li data-target="#homeCarousel" data-slide-to="0" class="active "></li>
-        <li data-target="#homeCarousel" data-slide-to="1" class=""></li>
-    </ol>
+            header{
+                background-color:gray;
+                color:black;
+                padding: 20px;
+                text-align:center;
+                font-size:24px;
+                font-weight:bold;
+            }
 
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="images/slider/wall3.jpg"/>
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1 class="carousel-title fadeInDownBig animated slow">Change your life with</h1>
-                    <h1 class="title-color">COUNTRY BANK</h1>
-                </div>
-            </div>
-        </div>
+            nav{
+                background-color:white;
+                padding:25px;
+                text-align:center;
+            }
 
-        <div class="item">
-            <img src="images/slider/wall4.jpg"/>
-            <div class="container">
-                <div class="carousel-caption ">
-                    <h1 class="carousel-title fadeInDownBig animated slow">Open your saloon</h1>
-                    <h1 class="title-color">See our credit offer</h1>
-                </div>
-            </div>
-        </div>
+            nav a{
+                color:black;
+                text-decoration:none;
+                padding:20px;
+                margin:20px;
+                font-weight:bold;
+            }
 
-        <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
-            <span class="fa fa-angle-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
+            nav a:hover {
+            color: #3498db;
+            } 
 
-        <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
-            <span class="fa fa-angle-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+            section {
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            }
 
-    </div>
+            h2{
+                color:dark-gray;
+                border-bottom:2px solid dark-gray;
+                padding-bottom: 5px;
+            }
 
+            .top:link, .top:visited {
+            background-color:rgba(0, 0, 71, 0.3);
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            }
 
-</div>
+            .top:hover, a:active {
+            background-color: gray ;
+            }
 
-<section id="personal">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="section-title">
-                    <h1 class="heading bold title">PERSONAL</h1>
-                    <hr/>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInDown animated" data-wow-delay="0.6s"
-                 style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                <h2>Credit</h2>
-                <img class="img_per img-circle" src="images/credit.jpeg"/>
-                <hr/>
-                <h4>Do you need money? Take a credit!</h4>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInDown animated" data-wow-delay="0.9s"
-                 style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                <h2>Fines</h2>
-                <img class="img_per img-circle" src="images/sheriff.jpeg"/>
-                <hr/>
-                <h4>Do not make nervous your sheriff</h4>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInDown animated" data-wow-delay="1s"
-                 style="visibility: visible; animation-delay: 1s; animation-name: fadeInUp;">
-                <h2>Debts</h2>
-                <img class="img_per img-circle" src="images/card_debts.jpeg"/>
-                <hr/>
-                <h4>Pay your card debts now! Otherwise headhunters could come for you</h4>
-            </div>
-            <div class="col-md-offset-2 col-lg-offset-2 col-lg-4 col-md-4 col-sm-4 wow fadeInDown animated"
-                 data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInUp;">
-                <h2>Services</h2>
-                <img class="img_per img-circle" src="images/ps.jpeg"/>
-                <hr/>
-                <h4>Pay for government services</h4>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInDown animated" data-wow-delay="1s"
-                 style="visibility: visible; animation-delay: 1s; animation-name: fadeInUp;">
-                <h2>Transfer</h2>
-                <img class="img_per img-circle" src="images/comp.jpeg"/>
-                <hr/>
-                <h4>Make transfer to your companion</h4>
-            </div>
-        </div>
-    </div>
-</section>
+        </style>
 
-<section id="subscribe">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="section-title">
-                    <h1 class="heading bold title">Subscribe</h1>
-                    <hr/>
-                </div>
-            </div>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+    </head>
 
+    <body>
+         <nav id="top">
+            <a href="p1.html">Home</a>
+            <a href="p2.html">CV</a>
+        </nav>
+       
 
-            <div class="col-md-offset-2  col-md-7 wow fadeInLeftBig animated" sec:authorize="anonymous">
-                <input type="email" name="subscribe" placeholder="Email" required="required"
-                       id="subscribe-email"/>
-                <button class="btn subscribe-btn scale_animated" id="subscribe-btn">Subscribe</button>
-            </div>
+        <section>
+            
+             <header> Kevin Patel CV</header>
 
-            <div class="col-md-offset-4  col-md-4 wow fadeInLeftBig animated" sec:authorize="isAuthenticated()">
-                <button class="btn subscribe-btn scale_animated" id="subscribe-btn" style="width: 100%">Subscribe
-                </button>
-                <button sec:authorize="isAuthenticated()" class="btn subscribe-btn" id="unfollow-btn"
-                        style="width: 100%">Unfollow
-                </button>
-            </div>
-            <div class="col-md-2 hint-img-container">
-                <i class="subscribed animated fadeIn  fa fa-check fa-5x"></i>
-                <i class="error-img animated fadeIn hint-img  fa fa-close fa-5x"></i>
-            </div>
-        </div>
-    </div>
-</section>
-<footer id="footer" class="footer" th:include="included/footer"></footer>
+       
+            <h2>
+                Education Background
+            </h2>
 
-<script src="js/library/jquery-1.11.1.min.js"></script>
-<script src="js/library/bootstrap.min.js"></script>
-<script src="js/library/owl.carousel.min.js"></script>
-<script src="js/user.js"></script>
-<script src="js/subscribe.js"></script>
-<script src="js/request.js"></script>
-<script src="js/common.js"></script>
+            <ul>
+                <li>Master's In Computer Science</li>
+                Middle Tennessee State University, Murfreesboro, TN
+                January 2023-Present<br></br>
+ 
+                <li>Master Of Information Assurance And Cyber</li> Security. 
+                Florida Institute Of Technology, Melbourne, FL
+                September 2022 – January 2023<br></br>
+              
+                
+                <li>Bachelor's In Computer Science</li>
+                Veer Narmad South Gujarat University, India 
+                July 2018-2021 
+            </ul>
 
-</body>
+            <h2>Skills</h2>
+
+            <ul>
+                <li>Programming Languages: java, asp.net,C++ </li>
+                <li>Soft Skills:Visual Studio, MS Office, Oracle Database</li>
+
+                <li>Soft : Teamwork, Leadership, Time-Management</li>
+                <li>Software : Unix, Visual Studio, MS Office, Oracle Database </li>
+               <li> Languages : C++, C, HTML, CSS, Java, JavaScript, Php MySQL </li>
+               <li> Processes : Testing, Debugging </li>
+                <li>Other : Interpersonal Communication, Teamwork </li>
+            </ul>
+
+            <h2>Work Experience </h2>
+            <ul>
+                <li>None</li>
+            </ul>
+
+            <h2>Research/Scholarly Activity</h2>
+            <ul>
+                <li>None</li>
+            </ul>
+
+            <h2>Award</h2>
+            <ul>
+                <li>Best Prooject Of the year(S.S.Agrawal College, 2021)</li>
+                 
+                <li>Blind C++ Programming Competition /2019 </li>
+                <li>New It Trends Seminar Participant /2019 </li>
+                <li>Last Year’s Seminar And Project Certification. (Navic Gps) /2021</li>
+            </ul>
+
+              <a href="#top" class="top" style='font-size:25px;'>&#128285;</a>
+        </section>
+
+       <section style="background-color:rgba(255, 255, 255,0.60)">
+         <p style="color:black; text-align:center">&copy Designed By Kevin Patel</p>
+      </section>
+      
+    </body>
 </html>
