@@ -80,8 +80,8 @@
     <body style='background-color:gray;color:white'>
 
         <nav id="top">
-            <a href="p1.html">Home</a>
-            <a href="p2.html">CV</a>
+            <a href="demo.jsp">Home</a>
+            <a href="index.jsp">CV</a>
         </nav>
 
         <section>
