@@ -105,7 +105,7 @@
 
         <hr>
         <H2 style="text-align: center">Image</H2>
-        <img src="bmw.jpg" alt="nashville" width="1170px" height="700px"> <br><br><br>
+        <img src="kom.jpg" alt="nashville" width="1170px" height="700px"> <br><br><br>
 
         <!-- Hyperlink -->
 
